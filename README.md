@@ -13,6 +13,7 @@ Download the autolink.gsc from this repro and save it in 'mods/pezbotsource/svr/
 Open the PeZBOT.gsc which is located in 'mods/pezbotsource/svr/'.
 Jump to the function 'GetButtonPressed()' and add a new if statement:
 
+```
 else if(self secondaryoffhandbuttonpressed())
 {
 	while(self secondaryoffhandbuttonpressed())
@@ -23,10 +24,12 @@ else if(self secondaryoffhandbuttonpressed())
 	
 	return "AutoLinkAllWaypoins"; //"ChangeWaypointType";
 }
+```
 
 Then jump to the function 'StartDev()' and find 'switch(level.players[0] GetButtonPressed())'.
 Add this two new case statements before the 'default' statement:
 
+```
 case "AutoLinkAllWaypoins":
 {
 	svr\autolink::AutoLinkAllWaypoins();
@@ -38,6 +41,7 @@ case "CheckWaypointConnections":
 	level.players[0] svr\autolink::getMissingLinks();
 	break;
 }
+```
 
 ## Configuration
 
